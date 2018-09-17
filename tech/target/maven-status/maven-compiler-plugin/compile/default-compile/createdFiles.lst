@@ -1,0 +1,5 @@
+com\wuzhuhua\entity\Person.class
+com\wuzhuhua\controller\PersonController.class
+com\wuzhuhua\mapper\PersonMapper.class
+com\wuzhuhua\service\impl\PersonServiceImpl.class
+com\wuzhuhua\service\PersonService.class
