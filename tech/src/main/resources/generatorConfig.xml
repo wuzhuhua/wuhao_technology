@@ -4,13 +4,17 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
     <!-- 绝对路径 -->
-    <classPathEntry location="/Users/mr_0928/.m2/repository/mysql/mysql-connector-java/5.1.15/mysql-connector-java-5.1.15.jar" />
+    <classPathEntry location="E:/myMavenRepository/mysql/mysql-connector-java/5.0.8/mysql-connector-java-5.0.8.jar" />
     <context id="DB2Tables"    targetRuntime="MyBatis3" defaultModelType="flat">
-        <!--<commentGenerator>-->
-        <!--<property name="suppressDate" value="true"/>-->
-        <!--<property name="suppressAllComments" value="true"/>-->
-        <!--</commentGenerator>-->
-        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+	       	<property name="suppressDate" value="true"/>
+	        <property name="suppressAllComments" value="true"/>
+	        <!-- 指定生成的java文件的编码,没有直接生成到项目时中文可能会乱码 -->
+        	<property name="javaFileEncoding" value="UTF-8"/>
+        	
+        	<!-- 这里的type里写的是你的实现类的类全路径 -->
+	        <commentGenerator type="com.wuzhuhua.unitls.MyCommentGenerator">
+	        </commentGenerator>
+        	<!-- <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" /> -->
 
         <!--数据库链接地址账号密码-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
@@ -21,12 +25,12 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!--生成Model类存放位置-->
-        <javaModelGenerator targetPackage="com.huaching.parking.ths.core.domain.pojo" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.wuzhuhua.entity" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!--生成映射文件存放位置-->
-        <sqlMapGenerator targetPackage="com.huaching.parking.ths.core.mapper" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="com.wuzhuhua.mapping" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
@@ -36,7 +40,7 @@
                 type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象
                 type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
         -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.huaching.parking.ths.core.mapper" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.wuzhuhua.mapper" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!--生成对应表及类名-->
@@ -49,7 +53,7 @@
         <!--<table tableName="parking_ths_order_record_refund" domainObjectName="ThsOrderRecordRefund"></table>-->
         <!--<table tableName="parking_ths_customer_feedback" domainObjectName="ThsCustomerFeedback"></table>-->
         <!--<table tableName="parking_business_account" domainObjectName="BusinessAccount"></table>-->
-        <table tableName="parking_ths_park_type" domainObjectName="ThsParkType"></table>
+        <table tableName="parking_park" domainObjectName="Park"></table>
         <!--keyProperty="id" useGeneratedKeys="true"-->
 
 
