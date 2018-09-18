@@ -18,6 +18,9 @@
     <!-- 解决:maven项目无法引入js,css的问题 -->
 	<mvc:default-servlet-handler/>
 	
+	<!-- mvc驱动 -->
+	<mvc:annotation-driven/>
+	
     <!-- 设置使用注解的类所在的jar包 -->
     <context:component-scan base-package="com.wuzhuhua.controller" />
 
