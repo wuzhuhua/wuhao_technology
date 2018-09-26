@@ -1,3 +1,14 @@
 目前问题：
 	1：页面还没有进行美化
-	2：还没有实现tomcat插件进行热部署
+
+	
+	
+maven命令：
+	几个常用的Goal
+	命令				描述
+	tomcat:deploy	部署一个web war包
+	tomcat:reload 	重新加载web war包
+	tomcat:start 	启动tomcat
+	tomcat:stop 	停止tomcat
+	tomcat:undeploy 停止一个war包
+	tomcat:run 		启动嵌入式tomcat ，并运行当前项目

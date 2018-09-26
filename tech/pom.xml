@@ -152,7 +152,7 @@
 				<!-- 项目访问路径 -->
 				<path>/tech</path>
 				<!-- Tomcat Manager的url访问路径，固定写法 -->
-				<url>http://localhost:8181/manager/text</url>
+				<url>http://localhost:8181/manager/html</url>
 				<!-- Tomcat Manager的用户名和密码 -->
 				<server>tomcat7</server>
 				<username>admin</username>
